@@ -40,8 +40,8 @@ body {
 /*header section*/
 .hero_area {
   position: relative;
-  background-color: #78853f;
-  height: 85vh;
+  background-color: #373793;
+  height: 90vh;
 }
 
 .sub_page .hero_area {
@@ -53,7 +53,7 @@ body {
 }
 
 .header_section {
-  background-color: #90953b;
+  background-color: #262129;
 }
 
 .header_section .container-fluid {
@@ -153,7 +153,7 @@ a:focus {
 /*end header section*/
 /* slider section */
 .slider_section {
-  background-image: url(../images/slider-bg.jpg);
+  background-image: url(../images/Youth-Parliament-B2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 90%;
