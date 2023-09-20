@@ -134,6 +134,10 @@ a:focus {
   color: #fefdfc;
   margin-left: 10px;
   text-transform: uppercase;
+
+ 
+
+
 }
 
 .custom_nav-container {
@@ -426,7 +430,7 @@ a:focus {
 
 .contact_section {
   position: relative;
-  background-color: #90973b;
+  background-color: grey;
   font-family: "Poppins", sans-serif;
 }
 
