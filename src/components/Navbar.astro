@@ -28,16 +28,10 @@ function isActive(href: string) {
         </svg>
       </div>
       <div class="logo-text">
-        <span class="logo-title">JNV Barpeta Road</span>
+        <span class="logo-title">JNV</span>
         <span class="logo-subtitle">Jawahar Navodaya Vidyalaya</span>
       </div>
     </a>
-
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navDrawer">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
 
     <div class="nav-drawer" id="navDrawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
       <div class="drawer-header">
@@ -77,9 +71,15 @@ function isActive(href: string) {
           </li>
         ))}
       </ul>
-      <div class="nav-actions">
-        <ThemeToggle />
-      </div>
+    </div>
+
+    <div class="nav-end">
+      <ThemeToggle />
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navDrawer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </div>
 </nav>
@@ -182,11 +182,15 @@ function isActive(href: string) {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-left: auto;
   }
-  .nav-actions {
+  .nav-end {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 115;
   }
   .nav-links-desktop {
     display: flex;
