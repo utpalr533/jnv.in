@@ -1,0 +1,101 @@
+<button class="theme-toggle" id="themeToggle" type="button"
+  aria-label="Switch theme: light, dark, or system"
+  title="Switch theme (light / dark / system)">
+  <img class="sun-icon" src="/images/icons8-light-mode-78.png" alt="Light mode" width="22" height="22" />
+  <img class="moon-icon" src="/images/icons8-do-not-disturb-ios-50.png" alt="Dark mode" width="22" height="22" />
+  <svg class="system-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+    <path d="M8 21h8M12 17v4"/>
+  </svg>
+</button>
+
+<script>
+  const btn = document.getElementById('themeToggle');
+  const modes = ['light', 'dark', 'system'];
+
+  function resolveTheme(pref) {
+    if (pref === 'system') {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    return pref;
+  }
+
+  function applyPreference(pref) {
+    document.documentElement.setAttribute('data-theme-preference', pref);
+    document.documentElement.setAttribute('data-theme', resolveTheme(pref));
+    localStorage.setItem('theme-preference', pref);
+  }
+
+  if (btn) {
+    btn.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme-preference') || 'system';
+      var idx = modes.indexOf(current);
+      var next = modes[(idx + 1) % modes.length];
+      applyPreference(next);
+    });
+  }
+
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    mq.addEventListener('change', function(e) {
+      var pref = document.documentElement.getAttribute('data-theme-preference');
+      if (pref === 'system') {
+        document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+      }
+    });
+  }
+</script>
+
+<style>
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s, background 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+  }
+  .theme-toggle:hover {
+    background: var(--bg-hover);
+    color: var(--text);
+    border-color: var(--text-3);
+  }
+  .theme-toggle:focus-visible {
+    outline: 2px solid var(--brand-navy);
+    outline-offset: 2px;
+  }
+
+  .sun-icon,
+  .moon-icon,
+  .system-icon {
+    display: none;
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  :global([data-theme-preference="light"]) .sun-icon {
+    display: block;
+    animation: iconPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  :global([data-theme-preference="dark"]) .moon-icon {
+    display: block;
+    animation: iconPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  :global([data-theme-preference="system"]) .system-icon {
+    display: block;
+    animation: iconPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes iconPop {
+    0% { transform: scale(0) rotate(-90deg); opacity: 0; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+</style>

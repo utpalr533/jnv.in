@@ -1,0 +1,282 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About Us | JNV Barpeta Road">
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('/images/Youth-Parliament-B2.jpg');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="hero-badge">About Us</span>
+      <h1 class="hero-title">Know Our School.</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="content-grid">
+        <div class="content-main">
+          <span class="section-eyebrow">History</span>
+          <h2 class="section-title">A Legacy of Excellence Since 1996.</h2>
+          <p>Jawahar Navodaya Vidyalaya, Barpeta Road was established in 1996 as part of the Navodaya Vidyalaya Samiti's mission to provide quality education to talented children from rural areas. The school is a fully residential co-educational institution affiliated to the Central Board of Secondary Education (CBSE).</p>
+          <p>Spread across a sprawling campus, the school offers education from Class VI to XII, with a strong focus on academic excellence, co-curricular activities, and character development.</p>
+        </div>
+        <div class="content-sidebar">
+          <div class="info-card">
+            <h3>School Details</h3>
+            <ul>
+              <li><strong>Established:</strong> 1996</li>
+              <li><strong>Type:</strong> Residential Co-educational</li>
+              <li><strong>Board:</strong> CBSE, New Delhi</li>
+              <li><strong>Classes:</strong> VI to XII</li>
+              <li><strong>Medium:</strong> English & Hindi</li>
+              <li><strong>Affiliation No.:</strong> XXXXXXX</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-gray">
+    <div class="section-inner">
+      <div class="vision-grid">
+        <div class="vision-card">
+          <h3>Our Mission</h3>
+          <p>To identify and nurture talented children from rural areas and provide them with quality education comparable to the best in the country, enabling them to realize their full potential.</p>
+        </div>
+        <div class="vision-card">
+          <h3>Our Vision</h3>
+          <p>To develop responsible citizens who are academically proficient, socially conscious, and equipped with the skills and values needed to contribute meaningfully to society.</p>
+        </div>
+        <div class="vision-card">
+          <h3>Our Values</h3>
+          <p>Excellence, inclusivity, integrity, innovation, and respect for diversity form the cornerstone of our educational philosophy and daily practice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="content-center">
+        <span class="section-eyebrow">Principal's Message</span>
+        <h2 class="section-title">A Word from Our Principal.</h2>
+        <div class="message-card">
+          <div class="message-avatar" style="background-image: url('/images/matti_1.jpeg');"></div>
+          <div class="message-text">
+            <p>"At JNV Barpeta Road, we believe in nurturing not just academic excellence but also character, creativity, and compassion. Our dedicated team of educators works tirelessly to create an environment where every student can discover their strengths and pursue their dreams. We are committed to building a brighter future for our students and our nation."</p>
+            <span class="message-author">Mr. Vishwas Kumar</span>
+            <span class="message-role">Principal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    position: relative;
+    height: 40vh;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--page-hero-overlay);
+    z-index: 1;
+    transition: background 0.3s;
+  }
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-hero);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    padding: 6px 16px;
+    border-radius: 9999px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .hero-title {
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -2.2px;
+    color: #fff;
+    margin: 0;
+  }
+
+  .section { padding: 96px 24px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-gray {
+    background: var(--bg-soft);
+    transition: background 0.3s;
+  }
+  .section-eyebrow {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    transition: color 0.3s;
+  }
+  .section-title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -1.28px;
+    color: var(--text);
+    margin: 0 0 24px;
+    transition: color 0.3s;
+  }
+  .section-title:last-child { margin-bottom: 0; }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .content-main p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-2);
+    margin: 0 0 16px;
+    transition: color 0.3s;
+  }
+  .info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .info-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 16px;
+    transition: color 0.3s;
+  }
+  .info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .info-card li {
+    font-size: 14px;
+    color: var(--text-2);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-soft);
+    line-height: 1.5;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .info-card li:last-child { border-bottom: none; }
+  .info-card li strong { color: var(--text); }
+
+  .vision-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .vision-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px 24px;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .vision-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 12px;
+    transition: color 0.3s;
+  }
+  .vision-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-3);
+    margin: 0;
+    transition: color 0.3s;
+  }
+
+  .content-center {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .message-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 40px 32px;
+    text-align: left;
+    display: flex;
+    gap: 24px;
+    align-items: start;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .message-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    background-color: var(--border);
+  }
+  .message-text p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-2);
+    margin: 0 0 16px;
+    font-style: italic;
+    transition: color 0.3s;
+  }
+  .message-author {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    transition: color 0.3s;
+  }
+  .message-role {
+    display: block;
+    font-size: 12px;
+    color: var(--text-3);
+    margin-top: 2px;
+    transition: color 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .hero-title { font-size: 30px; letter-spacing: -1.2px; }
+    .section { padding: 64px 16px; }
+    .content-grid { grid-template-columns: 1fr; }
+    .vision-grid { grid-template-columns: 1fr; }
+    .message-card { flex-direction: column; align-items: center; text-align: center; }
+  }
+</style>

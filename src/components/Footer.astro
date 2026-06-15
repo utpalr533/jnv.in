@@ -1,0 +1,99 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>JNV Barpeta Road</h4>
+        <p>Jawahar Navodaya Vidyalaya is a residential co-educational school under the Navodaya Vidyalaya Samiti.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/teaching-staff">Teaching Staff</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>JNV Barpeta Road</li>
+          <li>Dist. Barpeta, Assam</li>
+          <li>Phone: +91 XXX XXXXXXX</li>
+          <li>Email: jnvbrp@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 JNV Barpeta Road. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--border);
+    padding: 64px 24px 0;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-cols {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+  }
+  .footer-col h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin: 0 0 16px;
+    transition: color 0.3s;
+  }
+  .footer-col p,
+  .footer-col ul li {
+    font-size: 14px;
+    color: var(--text-3);
+    line-height: 1.6;
+    margin: 0;
+    transition: color 0.3s;
+  }
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-col ul li {
+    margin-bottom: 8px;
+  }
+  .footer-col a {
+    color: var(--text-3);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-col a:hover {
+    color: var(--text);
+  }
+  .footer-bottom {
+    margin-top: 48px;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    transition: border-color 0.3s;
+  }
+  .footer-bottom p {
+    font-size: 12px;
+    color: var(--text-4);
+    margin: 0;
+    transition: color 0.3s;
+  }
+  @media (max-width: 768px) {
+    .footer-cols {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+</style>

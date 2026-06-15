@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const staff = [
+  { id: 1, name: 'Mr. Vishwas Kumar', post: 'Principal', qualification: 'M.Sc, B.Ed' },
+  { id: 2, name: 'Vacant', post: 'Vice Principal', qualification: '' },
+  { id: 3, name: 'Mr. Debashish Sinha', post: 'PGT (Biology)', qualification: 'M.Sc, B.Ed' },
+  { id: 4, name: 'Dr. Pulin Nath', post: 'PGT (Chemistry)', qualification: 'M.Sc(Chem), Cancer Research, B.Ed' },
+  { id: 5, name: 'Bapi Dutta', post: 'PGT (Geography)', qualification: 'M.A, B.Ed, NET' },
+  { id: 6, name: 'Mrs. Panchali Roy', post: 'PGT (Economics)', qualification: 'M.A, B.Ed, M.Philosophy' },
+  { id: 7, name: 'Praveen Yadav', post: 'PGT (Hindi)', qualification: 'M.A, B.Ed, NET' },
+  { id: 8, name: 'Mrs. Ch. Ranibala Devi', post: 'PGT (English)', qualification: 'M.A, B.Ed' },
+  { id: 9, name: 'Mr. Babji KurumoJu', post: 'PGT (Physics)', qualification: 'M.A, B.Ed' },
+  { id: 10, name: 'Amritangsu Nath Mazumder', post: 'PGT (IT)', qualification: 'M.A, B.Ed' },
+  { id: 11, name: 'Kishor Kumar Sandu', post: 'PGT (History)', qualification: 'M.A, M.Phil, JRF' },
+];
+---
+
+<Layout title="Teaching Staff | JNV Barpeta Road">
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('/images/Youth-Parliament-B2.jpg');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="hero-badge">Faculty</span>
+      <h1 class="hero-title">Our Teaching Staff.</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-eyebrow">Academic Team</span>
+        <h2 class="section-title">Meet Our Dedicated Educators.</h2>
+        <p class="section-desc">Our faculty comprises experienced and passionate educators committed to academic excellence and holistic student development.</p>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="staff-table">
+          <thead>
+            <tr>
+              <th>Sl. No.</th>
+              <th>Name of the Teacher</th>
+              <th>Post</th>
+              <th>Qualification</th>
+            </tr>
+          </thead>
+          <tbody>
+            {staff.map((member) => (
+              <tr>
+                <td data-label="Sl. No.">{member.id}</td>
+                <td data-label="Name">{member.name}</td>
+                <td data-label="Post">{member.post}</td>
+                <td data-label="Qualification">{member.qualification || '\u2014'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    position: relative;
+    height: 40vh;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--page-hero-overlay);
+    z-index: 1;
+    transition: background 0.3s;
+  }
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-hero);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    padding: 6px 16px;
+    border-radius: 9999px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .hero-title {
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -2.2px;
+    color: #fff;
+    margin: 0;
+  }
+
+  .section { padding: 96px 24px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 48px; }
+  .section-eyebrow {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    transition: color 0.3s;
+  }
+  .section-title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -1.28px;
+    color: var(--text);
+    margin: 0 0 12px;
+    transition: color 0.3s;
+  }
+  .section-desc {
+    font-size: 16px;
+    color: var(--text-3);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+    transition: color 0.3s;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg-card);
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .staff-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .staff-table thead {
+    background: var(--bg-soft);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .staff-table th {
+    text-align: left;
+    padding: 16px 20px;
+    font-weight: 500;
+    color: var(--text-3);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+  }
+  .staff-table td {
+    padding: 14px 20px;
+    color: var(--text-2);
+    border-bottom: 1px solid var(--border-soft);
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .staff-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .staff-table tbody tr:hover {
+    background: var(--bg-soft);
+  }
+
+  @media (max-width: 768px) {
+    .hero-title { font-size: 30px; letter-spacing: -1.2px; }
+    .section { padding: 64px 16px; }
+  }
+</style>
