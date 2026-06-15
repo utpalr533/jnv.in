@@ -150,7 +150,7 @@ function isActive(href: string) {
   .logo-emblem {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, var(--brand-navy), var(--brand-navy-light));
+    background: linear-gradient(135deg, var(--brand-royal), var(--brand-royal-light));
     color: var(--brand-gold);
     border-radius: 10px;
     display: flex;
@@ -166,7 +166,7 @@ function isActive(href: string) {
   .logo-title {
     font-size: 16px;
     font-weight: 600;
-    color: var(--brand-navy);
+    color: var(--brand-royal);
     letter-spacing: -0.3px;
     line-height: 1.2;
     transition: color 0.3s;
@@ -225,19 +225,20 @@ function isActive(href: string) {
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s;
   }
   .nav-link:hover {
-    color: var(--brand-navy);
-    background: color-mix(in srgb, var(--brand-navy) 8%, transparent);
+    color: var(--brand-royal);
+    background: color-mix(in srgb, var(--brand-royal) 8%, transparent);
   }
   .nav-link:hover .nav-indicator {
     transform: translateX(-50%) scaleX(1);
+    background: var(--brand-royal);
   }
   .nav-link.active {
-    color: var(--brand-navy);
+    color: var(--brand-gold);
     font-weight: 500;
   }
   .nav-link.active .nav-indicator {
     transform: translateX(-50%) scaleX(1);
-    background: var(--brand-navy);
+    background: var(--brand-gold);
   }
 
   .btn-cta {
@@ -246,7 +247,7 @@ function isActive(href: string) {
     gap: 8px;
     padding: 0 20px;
     height: 36px;
-    background: linear-gradient(135deg, var(--brand-navy), var(--brand-navy-light));
+    background: linear-gradient(135deg, var(--brand-royal), var(--brand-royal-light));
     color: #fff;
     border-radius: 100px;
     font-size: 13px;
@@ -254,12 +255,12 @@ function isActive(href: string) {
     text-decoration: none;
     white-space: nowrap;
     transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
-    box-shadow: 0 2px 8px rgba(15, 43, 94, 0.2);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
   }
   .btn-cta:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(15, 43, 94, 0.3);
-    background: linear-gradient(135deg, var(--brand-navy-hover), var(--brand-navy-hover-2));
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+    background: linear-gradient(135deg, var(--brand-royal-hover), var(--brand-royal));
   }
   .btn-cta svg {
     transition: transform 0.2s;
@@ -282,17 +283,17 @@ function isActive(href: string) {
     transition: background 0.15s;
   }
   .hamburger:hover {
-    background: color-mix(in srgb, var(--brand-navy) 8%, transparent);
+    background: color-mix(in srgb, var(--brand-royal) 8%, transparent);
   }
   .hamburger:focus-visible {
-    outline: 2px solid var(--brand-navy);
+    outline: 2px solid var(--brand-royal);
     outline-offset: 2px;
   }
   .hamburger span {
     display: block;
     width: 22px;
     height: 2px;
-    background: var(--brand-navy);
+    background: var(--brand-royal);
     border-radius: 2px;
     transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: center;
@@ -369,7 +370,7 @@ function isActive(href: string) {
       transition: background 0.15s;
     }
     .drawer-close:hover { background: var(--border); }
-    .drawer-close:focus-visible { outline: 2px solid var(--brand-navy); outline-offset: 2px; }
+    .drawer-close:focus-visible { outline: 2px solid var(--brand-royal); outline-offset: 2px; }
 
     .nav-drawer .nav-links {
       display: flex;
@@ -404,7 +405,7 @@ function isActive(href: string) {
   }
 
   .nav-link:focus-visible {
-    outline: 2px solid var(--brand-navy);
+    outline: 2px solid var(--brand-royal);
     outline-offset: 2px;
     border-radius: 6px;
   }

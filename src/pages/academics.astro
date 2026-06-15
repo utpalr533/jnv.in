@@ -111,15 +111,16 @@ import Layout from '../layouts/Layout.astro';
     display: inline-block;
     font-size: 12px;
     font-weight: 500;
-    color: var(--text-hero);
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(8px);
-    padding: 6px 16px;
+    color: #fff;
+    background: rgba(37, 99, 235, 0.25);
+    backdrop-filter: blur(12px);
+    padding: 6px 18px;
     border-radius: 9999px;
     margin-bottom: 16px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   }
   .hero-title {
     font-size: 44px;
@@ -171,31 +172,57 @@ import Layout from '../layouts/Layout.astro';
   }
   .academic-card {
     background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 32px 24px;
-    transition: transform 0.2s, box-shadow 0.2s, background 0.3s, border-color 0.3s;
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 36px 28px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.4s, box-shadow 0.4s, border-color 0.3s, background 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .academic-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .academic-card:hover::before {
+    transform: scaleX(1);
   }
   .academic-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--bg-accent);
   }
   .academic-icon {
     width: 52px;
     height: 52px;
-    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-navy) 15%, transparent), color-mix(in srgb, var(--brand-gold) 15%, transparent));
+    background: var(--gradient-soft);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--brand-navy);
+    color: var(--brand-royal);
+    box-shadow: var(--shadow-sm);
     margin-bottom: 20px;
-    transition: color 0.3s, background 0.3s;
+    transition: color 0.3s, background 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  .academic-card:hover .academic-icon {
+    background: var(--gradient-primary);
+    color: #fff;
+    transform: scale(1.06);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
   }
   .academic-card h3 {
     font-size: 18px;
     font-weight: 600;
-    color: var(--brand-navy);
+    color: var(--brand-royal);
     margin: 0 0 8px;
     transition: color 0.3s;
   }
@@ -222,15 +249,21 @@ import Layout from '../layouts/Layout.astro';
   }
   .exam-card {
     background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 24px;
-    transition: background 0.3s, border-color 0.3s;
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.4s, transform 0.4s, border-color 0.3s, background 0.3s;
+  }
+  .exam-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+    border-color: var(--bg-accent);
   }
   .exam-card h3 {
     font-size: 15px;
     font-weight: 600;
-    color: var(--brand-navy);
+    color: var(--brand-royal);
     margin: 0 0 8px;
     transition: color 0.3s;
   }
